@@ -3,7 +3,15 @@
 	<b>Catégories :</b>
 	<ul>
 		<li><a href="article_list.php">Tous les articles</a></li>
-		<!-- liste des catégories -->
+        <?php
+        $query = $db->query('SELECT * FROM category');
 
+        while ($data =$query->fetch()){
+
+            echo '<li>'.'<a href="article_list.php">'.$data['name'].'</a>'.'</li>';
+
+
+        }
+         $query->closeCursor();?>
 	</ul>
 </nav>

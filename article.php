@@ -2,33 +2,49 @@
 
 <!DOCTYPE html>
 <html>
- <head>
+<head>
 
-	<title><?php echo $article['title']; ?> - Mon premier blog !</title>
+    <title><?php echo $article['title']; ?> - Mon premier blog !</title>
 
-   <?php require 'partials/head_assets.php'; ?>
+    <?php require 'partials/head_assets.php'; ?>
 
- </head>
- <body class="article-body">
-	<div class="container-fluid">
+</head>
+<body class="article-body">
+<div class="container-fluid">
 
-		<?php require 'partials/header.php'; ?>
+    <?php require 'partials/header.php'; ?>
 
-		<div class="row my-3 article-content">
+    <div class="row my-3 article-content">
 
-			<?php require 'partials/nav.php'; ?>
+        <?php require 'partials/nav.php'; ?>
 
 
-			<main class="col-9">
-				<article>
-            <!-- contenu de l'article -->
-				</article>
-			</main>
+        <main class="col-9">
+            <article>
+                <?php
 
-		</div>
+                $query = $db->prepare('SELECT * FROM article WHERE id = ?');
 
-		<?php require 'partials/footer.php'; ?>
+                $query->execute(array($_GET['article_id']));
 
-	</div>
- </body>
+                $data = $query->fetch(); ?>
+
+                <h1><?php echo $data['title']; ?></h1>
+                <p> Créée le <?php echo $data['created_at']; ?> <br> <?php echo $data['content']?></p>
+
+
+
+
+
+                <?php  $query->closeCursor()  ?>
+
+            </article>
+        </main>
+
+    </div>
+
+    <?php require 'partials/footer.php'; ?>
+
+</div>
+</body>
 </html>
