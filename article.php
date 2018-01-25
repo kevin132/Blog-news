@@ -30,7 +30,7 @@
                 $data = $query->fetch(); ?>
 
                 <h1><?php echo $data['title']; ?></h1>
-                <p> Créée le <?php echo $data['created_at']; ?> <br> <?php echo $data['content']?></p>
+                <p> Créé le <?php echo $data['created_at']; ?> <br> <?php echo $data['content']?></p>
 
 
 
