@@ -1,4 +1,4 @@
-﻿<?php require_once '_db.php'; ?>
+﻿<?php require_once 'tools/_db.php'; ?>
 
 <!DOCTYPE html>
 <html>
@@ -10,6 +10,7 @@
 
 </head>
 <body class="index-body">
+
 	<div class="container-fluid">
 
 		<?php require 'partials/header.php'; ?>
@@ -41,13 +42,10 @@
 						'<a href="article.php?article_id='.$data['id'].'">> Lire l\'article</a>'.
 						'<br>'.
 						'<br>';
-
 					}
-
 					$query->closeCursor();
 
 					?>
-
 				</section>
 				<div class="text-right">
 					<a href="article_list.php"> Tous les articles</a>

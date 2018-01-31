@@ -1,4 +1,4 @@
-<?php require_once '_db.php'; ?>
+<?php require_once 'tools/_db.php'; ?>
 
 <!DOCTYPE html>
 <html>
@@ -33,10 +33,8 @@
                 <p> Créé le <?php echo $data['created_at']; ?> <br> <?php echo $data['content']?></p>
 
 
-
-
-
                 <?php  $query->closeCursor()  ?>
+
 
             </article>
         </main>
