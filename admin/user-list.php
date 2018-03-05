@@ -1,9 +1,8 @@
 <?php
 
-require_once '../tools/_db.php';
-if($_SESSION['is_admin'] != 1){
-    header('location: login-register.php');
-}
+require_once '../tools/common.php';
+
+
 //supprimer l'utilisateur dont l'ID est envoyé en paramètre URL
 if(isset($_GET['user_id']) && isset($_GET['action']) && $_GET['action'] == 'delete'){
 
@@ -13,8 +12,6 @@ if(isset($_GET['user_id']) && isset($_GET['action']) && $_GET['action'] == 'dele
 			$_GET['user_id']
 		]
 	);
-
-
 	//générer un message à afficher plus bas pour l'administrateur
 	if($result){
 		$message = "Suppression efféctuée.";

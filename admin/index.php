@@ -1,4 +1,8 @@
-<?php require_once '../tools/_db.php'; ?>
+<?php 
+
+require_once '../tools/common.php'; 
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -17,9 +21,7 @@
 				<?php require 'partials/nav.php'; ?>
 				
 				<main class="col-9">
-					<section>
-						
-					</section>
+					
 				</main>
 			</div>
 			

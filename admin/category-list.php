@@ -1,9 +1,13 @@
 <?php
 
-require_once '../tools/_db.php';
-if($_SESSION['is_admin'] != 1){
-    header('location: login-register.php');
+require_once '../tools/common.php';
+
+/*
+if(!isset($_SESSION['is_admin']) OR $_SESSION['is_admin'] == 0){
+	header('location:../index.php');
+	exit;
 }
+*/
 //supprimer la catégorie dont l'ID est envoyé en paramètre URL
 if(isset($_GET['category_id']) && isset($_GET['action']) && $_GET['action'] == 'delete'){
 
